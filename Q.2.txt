@@ -1,0 +1,44 @@
+Q.2 Move files from one folder to respective folders?
+
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ pwd
+/c/Users/91940/Desktop/TFP-630/Assignments/Day3
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ touch abc.txt def.txt ghi.txt jkl.txt
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ ls
+abc.txt  day3Assignement.txt  def.txt  ghi.txt  jkl.txt
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ basename -a -s .txt *
+abc
+day3Assignement
+def
+ghi
+jkl
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ mkdir abc def ghi jkl
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ ls
+abc/  abc.txt  day3Assignement.txt  def/  def.txt  ghi/  ghi.txt  jkl/  jkl.txt
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ mv abc.txt abc
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ mv def.txt def
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ mv ghi.txt ghi
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ mv jkl.txt jkl
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ ls abc
+abc.txt

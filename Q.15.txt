@@ -1,0 +1,45 @@
+Q. 15 Find the difference between original file and updated file. Apply changes to the original file?
+
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$ mkdir original updated
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$ echo "mydata\nyourdata" > original-file.sh
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$ cat original-file.sh                                                        
+mydata
+yourdata
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$ cd ../updated 
+      
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$ echo "superdata\nkirandata" > updated-file.sh
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$  cat updated-file.sh 
+superdata
+kirandata
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$  diff -u original/original-file.sh updated/updated-file.sh 
+--- original/original-file.sh   2022-04-06 21:31:29.000000000 +0530
++++ updated/updated-file.sh     2022-04-06 21:32:24.000000000 +0530
+@@ -1,2 +1,2 @@
+-mydata
+-yourdata
++superdata
++kirandata
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$  cp original/original-file.sh original/original-backup.sh   
+ 
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$  comm -1 -3 original/original-file.sh updated/updated-file.sh > original/original-backup.sh 
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$  cat original/original-backup.sh                                                           
+superdata
+kirandata

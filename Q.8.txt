@@ -1,0 +1,14 @@
+Q. 8 Print list of 10 unique sorted client IP from /var/log/httpd/access.log?
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$ awk '{ print $1}' access.log | sort | uniq -c | sort -nr | head -n 10 
+ 383 10.56.2.2
+ 345 10.56.19.3
+ 323 10.56.21.2
+ 285 10.56.6.4
+ 283 10.56.1.3
+ 261 10.56.0.3
+ 251 10.56.22.3
+ 242 10.56.4.2
+ 214 10.56.3.4
+ 213 10.56.10.2

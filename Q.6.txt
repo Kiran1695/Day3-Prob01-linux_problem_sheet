@@ -1,0 +1,9 @@
+Q.6. Print list of last 4 frequently access unique urls at particular hours from /var/log/httpd/access.log?
+
+
+$ grep "26/Oct/2019:[0-9][0-9]:[0-9][0-9]" access.log | awk '{print $7}' | uniq -c
+   1 /wp-login.php
+   1 /ads.txt
+   1 /
+   1 /robots.txt
+   1 /ads.txt

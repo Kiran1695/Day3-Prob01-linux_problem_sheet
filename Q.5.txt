@@ -1,0 +1,8 @@
+Q.5. Print last 4 frequently access urls count in sorted order from /var/log/httpd/access.log?
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment
+$ cat access.log | awk '{print $7}' | sort -n | uniq -c | sort -nr | head -4
+    199 /vendor.js
+    199 /scripts.js
+    199 /runtime.js
+    199 /favicon.ico

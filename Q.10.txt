@@ -1,0 +1,18 @@
+Q. 10 Execute command "hello" and "ls" and check it's execution status and print whether command executed successful or not?
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ hello
+bash: hello: command not found
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ echo $?
+127
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ ls
+abc/     data.csv             def/  jkl/       mydir/
+backup/  day3Assignement.txt  ghi/  logfiles/
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ echo $?
+0

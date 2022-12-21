@@ -1,0 +1,69 @@
+Q.3 Append current date to all log file name which has extension .log.1 from a folder?
+
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ pwd
+/c/Users/91940/Desktop/TFP-630/Assignments/Day3
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ mkdir logfiles
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ ls
+abc/  day3Assignement.txt  def/  ghi/  jkl/  logfiles/
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ cd logfiles
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ touch abc.log.1 def.log.1 ghi.log.1 jkl.log.1 mno.log.1
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ basename -a -s .log.1 *
+abc
+def
+ghi
+jkl
+mno
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ date
+Sun Dec 18 13:12:45 IST 2022
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ date +'%d%m%y'
+181222
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ mydate=$(date +'%d%m%y')
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ mv abc.log.1 abc-$mydate.log
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ ls
+abc-181222.log  def.log.1  ghi.log.1  jkl.log.1  mno.log.1
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ mv def.log.1 def-$mydate.log
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ ls
+abc-181222.log  def-181222.log  ghi.log.1  jkl.log.1  mno.log.1
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ mv ghi.log.1 ghi-$mydate.log
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ mv jkl.log.1 jkl-$mydate.log
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ ls
+abc-181222.log  def-181222.log  ghi-181222.log  jkl-181222.log  mno.log.1
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ mv mno.log.1 mno-mydate.log
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3/logfiles
+$ ls
+abc-181222.log  def-181222.log  ghi-181222.log  jkl-181222.log  mno-mydate.log

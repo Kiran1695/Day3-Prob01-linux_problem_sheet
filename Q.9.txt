@@ -1,0 +1,21 @@
+Q.9 Check if a folder exist or not. If it's not present create it?
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/day3
+$ [ ! -d "mydir" ] && echo "Directtory mydir does not exists."
+Directtory mydir does not exists.
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/day3
+$ mkdir mydir
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/day3
+$ ll
+total 16
+drwxr-xr-x 1 91940 197609    0 Dec 18 13:04 abc/
+drwxr-xr-x 1 91940 197609    0 Dec 18 14:44 backup/
+-rw-r--r-- 1 91940 197609  944 Dec  9 20:38 data.csv
+-rw-r--r-- 1 91940 197609 7763 Dec 18 15:22 day3Assignement.txt
+drwxr-xr-x 1 91940 197609    0 Dec 18 13:04 def/
+drwxr-xr-x 1 91940 197609    0 Dec 18 13:05 ghi/
+drwxr-xr-x 1 91940 197609    0 Dec 18 13:05 jkl/
+drwxr-xr-x 1 91940 197609    0 Dec 18 13:24 logfiles/
+drwxr-xr-x 1 91940 197609    0 Dec 18 15:24 mydir/

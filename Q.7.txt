@@ -1,0 +1,7 @@
+Q.7. Print list of web response code count in the unique sorted order at specific hours?
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Downloads/bridgelabz/assignment
+$ cat access.log | awk '{print $9}' | sort -n | uniq -c | sort -nr
+   3176 200
+     26 304
+      8 206

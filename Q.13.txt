@@ -1,0 +1,8 @@
+Q. 13 Create process list table displays process Id, paren process Id, command name, % of memory consumption, % of cpu utilization?
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ ps xao pid,ppid,comm,%mem,%cpu
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     1585    1584    1585      21516  pty0      197609 19:26:53 /usr/bin/bash
+     1584       1    1584      10776  ?         197609 19:26:53 /usr/bin/mintty
+     1737    1585    1737      12588  pty0      197609 19:46:15 /usr/bin/ps

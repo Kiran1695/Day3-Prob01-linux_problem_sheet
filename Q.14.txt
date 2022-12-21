@@ -1,0 +1,62 @@
+Q. 14 Data analysis / manipulation (Awk)?
+i)Print employee name and totalpay who has basepay greater than 10000?
+
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ ls
+abc/     data.csv             def/  jkl/       mydir/
+backup/  day3Assignement.txt  ghi/  logfiles/
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ cat data.csv
+Id EmployeeName JobTitle        BasePay OvertimePay OtherPay TotalPay TotalPayBenefits
+1  NATHANIEL    GM              167411  0           400184   567595   567595
+2  GARY         CAPTAIN         155966  245131      137811   538909   538909
+3  ALBERT       CAPTAIN         212739  106088      16452    335279   335279
+4  CHRISTOPHER  MECHANIC        77916   56120       198306   332343   332343
+5  PATRICK      DEPUTYCHIEF     134401  9737        182234   326373   326373
+6  DAVID        ASSTDEPUTY      118602  8601        189082   316285   316285
+7  ALSON        BATTALIONCHIEF  92492   89062       134426   315981   315981
+8  DAVID        DEPUTYDIRECTOR  256576  0           51322    307899   307899
+10 JOANNE       CHIEF           285262  0           17115    302377   302377
+12 PATRICIA     CAPTAIN         99722   87082       110804   297608   297608
+13 EDWARD       EXECUTIVE       294580  0           0        294580   294580
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ awk '$4 > 10000' data.csv | awk '{print $2,"       ",$7}'
+EmployeeName         TotalPay
+NATHANIEL         567595
+GARY         538909
+ALBERT         335279
+CHRISTOPHER         332343
+PATRICK         326373
+DAVID         316285
+ALSON         315981
+DAVID         307899
+JOANNE         302377
+PATRICIA         297608
+EDWARD         294580
+
+----------------------------------------------------------------------------------------------------------------
+
+Q.14. ii) What is the aggregate totalpay of employee whose jobTitle is "CAPTAIN"?
+
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$  cat data.csv | awk '{if ( $3 == "CAPTAIN" ) print $7}'| awk '{ SUM_SALARY += $1 } END { print SUM_SALARY }' 
+1171796
+--------------------------------------------------------------------------------------------------------------------------
+
+Q.14. iii) Print jobtitle and overtimepay who has overtimepay between 7000 and 10000?
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ cat data.csv | awk '{if ( $5 > 7000 && $5 < 10000 ) print $3}'
+DEPUTYCHIEF
+ASSTDEPUTY
+----------------------------------------------------------------------------------------------------------------------
+
+Q.14. iv) iv) Print average basepay?
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/TFP-630/Assignments/Day3
+$ cat data.csv | awk '{ sum += $4 } END { print(sum/NR-1)}'
+157971

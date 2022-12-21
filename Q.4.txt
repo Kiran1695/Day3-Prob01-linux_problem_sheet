@@ -1,0 +1,26 @@
+Q. 4 Archive the files from /var/log folder which have modified 7 days ago and move it to your backup folder? (Window dont have /var/log folder so I used my folder)
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment
+$ find ./ -maxdepth 1 -mtime +7 -type f
+./b.txt
+./c.txt
+./sample.txt
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment
+$ mkdir backup
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment
+$ find ./ -maxdepth 1 -mtime +7 -type f | xargs tar -czvPf ./backup/backup_$(date +%F).tar.gz
+./b.txt
+./c.txt
+./sample.txt
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment
+$ ls
+b.txt  backup/  c.txt  data.csv  day3assignment/  mydata/  newfolder/  sample.txt  sample1.txt
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment
+$ cd backup
+
+91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment/backup
+$ ls
+backup_2022-04-05.tar.gz

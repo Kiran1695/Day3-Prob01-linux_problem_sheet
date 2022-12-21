@@ -1,0 +1,12 @@
+Q. 11 Set environment usersecret ="dH34xJaa23" if already not set?
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$  if [ -z ${usersecret+x} ]; then echo "usersecret is not set"; else echo "var is set to '$usersecret'"; fi
+usersecret is not set
+
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$ export usersecret="dH34xJaa23"
+               
+ 91940@LAPTOP-BEPC3SST MINGW64 ~/Desktop/assignment  
+$ if [ -z ${usersecret+x} ]; then echo "usersecret is not set"; else echo "var is set to '$usersecret'"; fi
+var is set to 'dH34xJaa23'
